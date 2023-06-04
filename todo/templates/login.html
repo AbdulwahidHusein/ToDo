@@ -2,18 +2,19 @@
   {% block content %}
   <div class="card" style="margin:20px; border:20px">
   {% if login %}
-      <form>
+      <form method="post">
+        {% csrf_token%}
         <p class="text-center">Login</p>
         <div class="align-items-center card">
         <!-- Email input -->
           <div class="form-outline col-6 justify-content-center">
-            <input type="email" id="loginName" class="form-control" />
-            <label class="form-label" for="loginName">Email or username</label>
+            <input type="email" id="email" name="email" class="form-control" />
+            <label class="form-label" name="email" for="email">Email or username</label>
           </div>
         <!-- Password input -->
           <div class="form-outline  col-6 justify-content-center">
-            <input type="password" id="loginPassword" class="form-control" />
-            <label class="form-label" for="loginPassword">Password</label>
+            <input type="password" name="password" id="password" class="form-control" />
+            <label class="form-label"  for="loginPassword">Password</label>
           </div>
           <div class="col-md-6 d-flex justify-content-center">
             <!-- Simple link -->
@@ -26,36 +27,37 @@
   
         <!-- Register buttons -->
         <div class="text-center">
-          <p>Not a member? <a href="#!">Register</a></p>
+          <p>Not a member? <a href="{% url 'register' %}">Register</a></p>
         </div>
       </div>
     </div>
       </form>
       {% else %}
-      <form>
+      <form method="post">
+        {% csrf_token%}
         <div class="align-items-center card space-between ">
         <p class="text-center">Signup
         </p>
         <!-- Name input -->
         <div class="form-outline col-6 justify-content-center">
-          <input type="text" id="registerName" class="form-control" />
+          <input type="text" id="Name" name="Name" class="form-control" />
           <label class="form-label" for="registerName">Name</label>
         </div>
         <br />
         <!-- Email input -->
         <div class="form-outline col-6 justify-content-center">
-          <input type="email" id="registerEmail" class="form-control" />
+          <input type="email" id="Email" name="Email" class="form-control" />
           <label class="form-label" for="registerEmail">Email</label>
         </div>
         <br />
         <!-- Password input -->
         <div class="form-outline col-6 justify-content-center">
-          <input type="password" id="registerPassword" class="form-control" />
+          <input type="password" name="password" id="password" class="form-control" />
           <label class="form-label" for="registerPassword">Password</label>
         </div>
         <br />
         <div class="form-outline col-6 justify-content-center">
-          <input type="password" id="registerRepeatPassword" class="form-control" />
+          <input type="password" id="password2" name="password2" class="form-control" />
           <label class="form-label" for="registerRepeatPassword">Repeat password</label>
         </div>
         <br /> <br />

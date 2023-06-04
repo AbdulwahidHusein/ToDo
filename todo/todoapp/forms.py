@@ -3,7 +3,7 @@ from. models import Task
 class TaskForm(ModelForm):
     class Meta:
         model = Task
-        fields = '__all__'
+        fields = ['name','description', 'deadline']
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.fields:
