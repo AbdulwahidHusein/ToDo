@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content%}
+<section>
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7">
+          <div class="card rounded-3">
+            <div class="card-body p-4">
+              <h4 class="text-center my-3 pb-3">Create a new Task</h4>
+             <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+                 {% csrf_token %} 
+                <div class="col-12">
+                  <div class="form-outline">
+                    {{ form.name }}
+                    <label class="form-label" for="form1">Name of The Task</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-outline">
+                      {{ form.description }}
+                      <label class="form-label" for="form1">Description</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-outline">
+                      {{ form.deadline }}
+                      <label class="form-label" for="form1">Deadline Date</label>
+                    </div>
+                  </div>
+                <div class="justify-content space-between align-items-center">
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            <br />
+  
+                <div class="col-12">
+                  <a style="width:500px" href="tasks" class="btn btn-warning">Get tasks</a>
+                </div>
+            </div>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

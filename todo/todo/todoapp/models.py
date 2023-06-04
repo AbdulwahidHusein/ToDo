@@ -9,3 +9,4 @@ class Task(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     complated = models.BooleanField(default=False)
     description = models.TextField(null=True, blank=True)
+    
